@@ -6,6 +6,6 @@ import com.microservices.udemy.bean.CurrencyExchange;
 
 public interface CurrencyExchangeRepository extends JpaRepository<CurrencyExchange, Long> {
 
-	public CurrencyExchange findByToAndFrom(String from, String to);
+	public CurrencyExchange findByFromAndTo(String from, String to);
 
 }

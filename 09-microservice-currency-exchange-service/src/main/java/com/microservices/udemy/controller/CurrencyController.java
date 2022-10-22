@@ -24,7 +24,7 @@ public class CurrencyController {
 	public CurrencyExchange getCurrencyExchange(@PathVariable String from, @PathVariable String to) {
 
 //		CurrencyExchange currencyExchange = new CurrencyExchange(1000l, "USD", "INR", BigDecimal.valueOf(50));
-		CurrencyExchange currencyExchange = currencyExchangeRepo.findByToAndFrom(from, to	);
+		CurrencyExchange currencyExchange = currencyExchangeRepo.findByFromAndTo(from, to);
 		String port = environment.getProperty("local.server.port");
 		currencyExchange.setEnvironment(port);
 		return currencyExchange;
