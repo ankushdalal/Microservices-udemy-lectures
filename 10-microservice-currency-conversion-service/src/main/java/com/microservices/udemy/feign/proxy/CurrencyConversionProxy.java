@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.microservices.udemy.bean.CurrencyConversion;
 
-@FeignClient(name = "currency-exchange", url = "localhost:8000")
+//@FeignClient(name = "currency-exchange", url = "localhost:8000")
+@FeignClient(name = "currency-exchange")
 public interface CurrencyConversionProxy {
 
-	@RequestMapping(method=RequestMethod.GET,value="/currency-exchange/from/{from}/to/{to}")
+	@RequestMapping(method = RequestMethod.GET, value = "/currency-exchange/from/{from}/to/{to}")
 	public CurrencyConversion getCurrConversionFeign(@RequestParam String from, @RequestParam String to,
 			@RequestParam String quantity);
 
